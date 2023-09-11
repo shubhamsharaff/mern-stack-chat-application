@@ -4,6 +4,7 @@ const { chats } = require("./data/data")
 const connectDB = require("./config/db")
 const colors = require('colors')
 const userRoutes = require('./routes/userRoutes')
+const chatRoutes = require('./routes/chatRoutes')
 const {errorHandler,notFound} = require('./middleware/errorMiddleware')
 
 
@@ -18,6 +19,8 @@ app.use(express.json())
 
 // API Endpoints
 app.use('/api/user',userRoutes)
+app.use('/api/chat',chatRoutes)
+
 
 // Errors handling Middlewares 
 app.use(notFound)
